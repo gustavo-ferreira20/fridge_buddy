@@ -11,6 +11,20 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var signupRounded: UIButton!
     @IBOutlet weak var loginRounded: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        
+        //Removing Back text
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         signupRounded.layer.cornerRadius = 10
