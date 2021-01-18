@@ -8,7 +8,11 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 39, height: 39))
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     let image = UIImage(named: "logo-text-1.png")
    // let background = UIImage(named: "Mango.png")
     
@@ -18,23 +22,49 @@ class LoginViewController: UIViewController {
         //title = "FridgeBuddy"
         
         // Adding a Image in the Navigation Bar
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = image
-        navigationItem.titleView = imageView
-        
+            addImageNavBar(image: image!)
+
         // Adding a background image to the Nav bar
       //navigationController?.addBackground(imageName: "Mango.png")
-       addBackgroundNavBar(imageName: "Mango.png")
+          addBackgroundNavBar(imageName: "Mango.png")
         
     }
     
+    @IBAction func loginPressed(_ sender: UIButton) {
+    }
     
+    @IBAction func forgotPasswordPressed(_ sender: UIButton) {
+    }
+    
+    // adding a image logo in the nav bar
+    func addImageNavBar(image: UIImage){
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 39, height: 39))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = image
+        navigationItem.titleView = imageView
+    }
+
     //adding background image to nav bar
     func addBackgroundNavBar(imageName: String)  {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: imageName)?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), resizingMode: .stretch), for: .default)
     }
     
 }
+
+//extension UINavigationController{
+//    // adding a image logo in the nav bar
+//    func addImageNavBar(image: UIImage){
+//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 39, height: 39))
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.image = image
+//        navigationItem.titleView = imageView
+//    }
+//
+//    //adding background image to nav bar
+//    func addBackgroundNavBar(imageName: String)  {
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: imageName)?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), resizingMode: .stretch), for: .default)
+//    }
+//}
 
 
 //extension UINavigationController {
