@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0980A4130D60B033B76586DB /* Pods_fridge_buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79B3F5156B9878E966E466 /* Pods_fridge_buddy.framework */; };
+		5430BBE9C4F83325BB5778AE /* Pods_fridge_buddy_fridge_buddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3F93E4ED520BDD8C1CF7B5 /* Pods_fridge_buddy_fridge_buddyUITests.framework */; };
 		9304EE1125B51F3800426F94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304EE1025B51F3800426F94 /* SignupViewController.swift */; };
+		9330E64D25B66948007588E7 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330E64C25B66948007588E7 /* ForgotPassword.swift */; };
+		9370AFA425B7BCAF00DC7C0B /* HomepageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */; };
+		938EEF2625B95B6300B6A417 /* SlideInTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EEF2525B95B6300B6A417 /* SlideInTrasition.swift */; };
 		9399033425AD3EC700A96315 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399033325AD3EC700A96315 /* LoginViewController.swift */; };
+		93EBE31B25B92C82006BF03F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE31A25B92C82006BF03F /* MenuController.swift */; };
+		93EBE32025B9389B006BF03F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE31F25B9389B006BF03F /* FavoritesViewController.swift */; };
+		93EBE32525B93900006BF03F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE32425B93900006BF03F /* HistoryViewController.swift */; };
 		93F6C03B25ABF0B4009CBEA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6C03A25ABF0B4009CBEA6 /* AppDelegate.swift */; };
 		93F6C03D25ABF0B4009CBEA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6C03C25ABF0B4009CBEA6 /* SceneDelegate.swift */; };
 		93F6C03F25ABF0B4009CBEA6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6C03E25ABF0B4009CBEA6 /* WelcomeViewController.swift */; };
@@ -17,6 +25,7 @@
 		93F6C04725ABF0B5009CBEA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F6C04525ABF0B5009CBEA6 /* LaunchScreen.storyboard */; };
 		93F6C05225ABF0B5009CBEA6 /* fridge_buddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6C05125ABF0B5009CBEA6 /* fridge_buddyTests.swift */; };
 		93F6C05D25ABF0B5009CBEA6 /* fridge_buddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6C05C25ABF0B5009CBEA6 /* fridge_buddyUITests.swift */; };
+		FB48E204FD037DC1879891B7 /* Pods_fridge_buddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CB42ED49E37E780EA7EE1D /* Pods_fridge_buddyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +46,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BF3FFB50F77D5F72E09628A /* Pods-fridge_buddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridge_buddyTests.debug.xcconfig"; path = "Target Support Files/Pods-fridge_buddyTests/Pods-fridge_buddyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		27E610292EE2A11202CB4DC4 /* Pods-fridge_buddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridge_buddy.release.xcconfig"; path = "Target Support Files/Pods-fridge_buddy/Pods-fridge_buddy.release.xcconfig"; sourceTree = "<group>"; };
+		74A207D83648BC232F469A2C /* Pods-fridge_buddy-fridge_buddyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridge_buddy-fridge_buddyUITests.release.xcconfig"; path = "Target Support Files/Pods-fridge_buddy-fridge_buddyUITests/Pods-fridge_buddy-fridge_buddyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7E5DB036EA97FC3B08CDB4E2 /* Pods-fridge_buddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridge_buddy.debug.xcconfig"; path = "Target Support Files/Pods-fridge_buddy/Pods-fridge_buddy.debug.xcconfig"; sourceTree = "<group>"; };
 		9304EE1025B51F3800426F94 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		9330E64C25B66948007588E7 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageController.swift; sourceTree = "<group>"; };
+		938EEF2525B95B6300B6A417 /* SlideInTrasition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTrasition.swift; sourceTree = "<group>"; };
 		9399033325AD3EC700A96315 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		93EBE31A25B92C82006BF03F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		93EBE31F25B9389B006BF03F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		93EBE32425B93900006BF03F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		93F6C03725ABF0B4009CBEA6 /* fridge_buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fridge_buddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F6C03A25ABF0B4009CBEA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F6C03C25ABF0B4009CBEA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +72,11 @@
 		93F6C05825ABF0B5009CBEA6 /* fridge_buddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fridge_buddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F6C05C25ABF0B5009CBEA6 /* fridge_buddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fridge_buddyUITests.swift; sourceTree = "<group>"; };
 		93F6C05E25ABF0B5009CBEA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4CB42ED49E37E780EA7EE1D /* Pods_fridge_buddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fridge_buddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE79B3F5156B9878E966E466 /* Pods_fridge_buddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fridge_buddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4990C37E6D6642D4BC1F6C3 /* Pods-fridge_buddy-fridge_buddyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridge_buddy-fridge_buddyUITests.debug.xcconfig"; path = "Target Support Files/Pods-fridge_buddy-fridge_buddyUITests/Pods-fridge_buddy-fridge_buddyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC3F93E4ED520BDD8C1CF7B5 /* Pods_fridge_buddy_fridge_buddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fridge_buddy_fridge_buddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC712CD4F223B65A9D45E6C7 /* Pods-fridge_buddyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridge_buddyTests.release.xcconfig"; path = "Target Support Files/Pods-fridge_buddyTests/Pods-fridge_buddyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0980A4130D60B033B76586DB /* Pods_fridge_buddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB48E204FD037DC1879891B7 /* Pods_fridge_buddyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +100,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5430BBE9C4F83325BB5778AE /* Pods_fridge_buddy_fridge_buddyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56DEF0188CB08D7C4DD1889F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E5DB036EA97FC3B08CDB4E2 /* Pods-fridge_buddy.debug.xcconfig */,
+				27E610292EE2A11202CB4DC4 /* Pods-fridge_buddy.release.xcconfig */,
+				B4990C37E6D6642D4BC1F6C3 /* Pods-fridge_buddy-fridge_buddyUITests.debug.xcconfig */,
+				74A207D83648BC232F469A2C /* Pods-fridge_buddy-fridge_buddyUITests.release.xcconfig */,
+				1BF3FFB50F77D5F72E09628A /* Pods-fridge_buddyTests.debug.xcconfig */,
+				DC712CD4F223B65A9D45E6C7 /* Pods-fridge_buddyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		790A3598A9483B0FE63C21C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE79B3F5156B9878E966E466 /* Pods_fridge_buddy.framework */,
+				DC3F93E4ED520BDD8C1CF7B5 /* Pods_fridge_buddy_fridge_buddyUITests.framework */,
+				A4CB42ED49E37E780EA7EE1D /* Pods_fridge_buddyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		93F6C02E25ABF0B4009CBEA6 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +137,8 @@
 				93F6C05025ABF0B5009CBEA6 /* fridge_buddyTests */,
 				93F6C05B25ABF0B5009CBEA6 /* fridge_buddyUITests */,
 				93F6C03825ABF0B4009CBEA6 /* Products */,
+				56DEF0188CB08D7C4DD1889F /* Pods */,
+				790A3598A9483B0FE63C21C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +199,11 @@
 				93F6C03E25ABF0B4009CBEA6 /* WelcomeViewController.swift */,
 				9399033325AD3EC700A96315 /* LoginViewController.swift */,
 				9304EE1025B51F3800426F94 /* SignupViewController.swift */,
+				9330E64C25B66948007588E7 /* ForgotPassword.swift */,
+				9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */,
+				93EBE31A25B92C82006BF03F /* MenuController.swift */,
+				93EBE31F25B9389B006BF03F /* FavoritesViewController.swift */,
+				93EBE32425B93900006BF03F /* HistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +211,7 @@
 		93F6C06F25AC1367009CBEA6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				938EEF2525B95B6300B6A417 /* SlideInTrasition.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93F6C06125ABF0B5009CBEA6 /* Build configuration list for PBXNativeTarget "fridge_buddy" */;
 			buildPhases = (
+				098DA8CB6487CB05E8D5A8BF /* [CP] Check Pods Manifest.lock */,
 				93F6C03325ABF0B4009CBEA6 /* Sources */,
 				93F6C03425ABF0B4009CBEA6 /* Frameworks */,
 				93F6C03525ABF0B4009CBEA6 /* Resources */,
@@ -182,6 +241,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93F6C06425ABF0B5009CBEA6 /* Build configuration list for PBXNativeTarget "fridge_buddyTests" */;
 			buildPhases = (
+				28930454457FBA14503041CF /* [CP] Check Pods Manifest.lock */,
 				93F6C04925ABF0B5009CBEA6 /* Sources */,
 				93F6C04A25ABF0B5009CBEA6 /* Frameworks */,
 				93F6C04B25ABF0B5009CBEA6 /* Resources */,
@@ -200,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93F6C06725ABF0B5009CBEA6 /* Build configuration list for PBXNativeTarget "fridge_buddyUITests" */;
 			buildPhases = (
+				702A303F7DD63E2CB71F5EE8 /* [CP] Check Pods Manifest.lock */,
 				93F6C05425ABF0B5009CBEA6 /* Sources */,
 				93F6C05525ABF0B5009CBEA6 /* Frameworks */,
 				93F6C05625ABF0B5009CBEA6 /* Resources */,
@@ -283,16 +344,91 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		098DA8CB6487CB05E8D5A8BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fridge_buddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28930454457FBA14503041CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fridge_buddyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		702A303F7DD63E2CB71F5EE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fridge_buddy-fridge_buddyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		93F6C03325ABF0B4009CBEA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93EBE31B25B92C82006BF03F /* MenuController.swift in Sources */,
+				93EBE32025B9389B006BF03F /* FavoritesViewController.swift in Sources */,
 				9399033425AD3EC700A96315 /* LoginViewController.swift in Sources */,
+				93EBE32525B93900006BF03F /* HistoryViewController.swift in Sources */,
 				93F6C03F25ABF0B4009CBEA6 /* WelcomeViewController.swift in Sources */,
 				9304EE1125B51F3800426F94 /* SignupViewController.swift in Sources */,
 				93F6C03B25ABF0B4009CBEA6 /* AppDelegate.swift in Sources */,
+				9370AFA425B7BCAF00DC7C0B /* HomepageController.swift in Sources */,
 				93F6C03D25ABF0B4009CBEA6 /* SceneDelegate.swift in Sources */,
+				938EEF2625B95B6300B6A417 /* SlideInTrasition.swift in Sources */,
+				9330E64D25B66948007588E7 /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +601,7 @@
 		};
 		93F6C06225ABF0B5009CBEA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E5DB036EA97FC3B08CDB4E2 /* Pods-fridge_buddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -484,6 +621,7 @@
 		};
 		93F6C06325ABF0B5009CBEA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27E610292EE2A11202CB4DC4 /* Pods-fridge_buddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +641,7 @@
 		};
 		93F6C06525ABF0B5009CBEA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BF3FFB50F77D5F72E09628A /* Pods-fridge_buddyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +663,7 @@
 		};
 		93F6C06625ABF0B5009CBEA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC712CD4F223B65A9D45E6C7 /* Pods-fridge_buddyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -545,6 +685,7 @@
 		};
 		93F6C06825ABF0B5009CBEA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4990C37E6D6642D4BC1F6C3 /* Pods-fridge_buddy-fridge_buddyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -564,6 +705,7 @@
 		};
 		93F6C06925ABF0B5009CBEA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74A207D83648BC232F469A2C /* Pods-fridge_buddy-fridge_buddyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
