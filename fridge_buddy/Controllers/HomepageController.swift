@@ -14,8 +14,20 @@ class HomepageController: UITableViewController {
     var topView: UIView?
 
    
-    let ingredientArray = ["Rice", "Beans", "Salmon"]
+    let ingredientArray = ["Rice", "Beans", "Salmon", "Fish", "Tomato"]
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        //Displaying Toolbar if array >= 0
+        lengthOfList(animated: animated)
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated);
+        self.navigationController?.setToolbarHidden(true, animated: animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +35,7 @@ class HomepageController: UITableViewController {
 
         title = "Food in my Fridge"
         navigationItem.hidesBackButton = true
-        findRecipeButton.layer.borderColor = UIColor.orange.cgColor
-        findRecipeButton.layer.borderWidth = 1.0
-        findRecipeButton.layer.cornerRadius = 6
+
         
     }
     
@@ -45,6 +55,18 @@ class HomepageController: UITableViewController {
         present(menuViewController, animated: true)
 
     }
+    
+    // Checking how many ingredients in the list
+    func lengthOfList(animated: Bool){
+        self.navigationController?.toolbar.barTintColor = UIColor.orange
+        
+        if ingredientArray.count <= 0{
+            self.navigationController?.setToolbarHidden(true, animated: animated)
+        } else{
+            self.navigationController?.setToolbarHidden(false, animated: animated)
+        }
+    }
+    
     
     //MARK - Add New Items
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
