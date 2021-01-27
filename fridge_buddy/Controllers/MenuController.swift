@@ -42,6 +42,8 @@ class MenuController: UITableViewController{
             self?.didTapMenuType?(menuType)
         }
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
 

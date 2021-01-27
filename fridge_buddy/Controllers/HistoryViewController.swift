@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HistoryViewController: UITableViewController {
+class HistoryViewController: LoginViewController {
     
     
 

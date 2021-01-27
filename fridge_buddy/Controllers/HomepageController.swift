@@ -15,9 +15,6 @@ class HomepageController: UITableViewController {
    
     let ingredientArray = ["Rice", "Beans", "Salmon"]
     
-    //test
-    let history = ["test 1", "test 2"]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +43,10 @@ class HomepageController: UITableViewController {
 
     }
     
+    //MARK - Add New Items
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
     func transitionToNew(_ menuType: MenuType){
         //topView?.removeFromSuperview()
         switch menuType {
@@ -61,26 +62,7 @@ class HomepageController: UITableViewController {
         default:
             break
         }
-
-//            // I can add a child view controller to change the content
-////            topView?.removeFromSuperview()
-////            switch menuType {
-////            case .favorites:
-////                let view = UIView()
-////                view.backgroundColor = .yellow
-////                view.frame = self.view.bounds
-////                self.view.addSubview(view)
-////                self.topView = view
-////            case .history:
-////                let view = UIView()
-////                view.backgroundColor = .blue
-////                view.frame = self.view.bounds
-////                self.view.addSubview(view)
-////                self.topView = view
-////            default:
-////                break
-////            }
-//        }
+          // I can add a child view controller to change the content
         
     }
     
@@ -99,8 +81,18 @@ class HomepageController: UITableViewController {
         
         return cell
     }
+    
+    // MARK - TableView Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(ingredientArray[indexPath.row])
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
+
+
 
 extension HomepageController: UIViewControllerTransitioningDelegate{
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
