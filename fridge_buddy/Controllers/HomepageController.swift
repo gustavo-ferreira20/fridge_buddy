@@ -9,6 +9,7 @@ import UIKit
 
 class HomepageController: UITableViewController {
     
+    @IBOutlet weak var findRecipeButton: UIButton!
     let transition = SlideInTrasition()
     var topView: UIView?
 
@@ -22,13 +23,19 @@ class HomepageController: UITableViewController {
 
         title = "Food in my Fridge"
         navigationItem.hidesBackButton = true
+        findRecipeButton.layer.borderColor = UIColor.orange.cgColor
+        findRecipeButton.layer.borderWidth = 1.0
+        findRecipeButton.layer.cornerRadius = 6
+        
     }
     
 
+    @IBAction func findRecipepressed(_ sender: UIButton) {
+        //Search for recipe in the API
+    }
     
     @IBAction func didTapMenuButton(_ sender: UIBarButtonItem) {
         guard let menuViewController = storyboard?.instantiateViewController(identifier: "MenuViewController") as? MenuController else{return}
-//        let navController = UINavigationController(rootViewController: menuViewController)
         menuViewController.didTapMenuType = {
             menuType in print(menuType)
                 self.transitionToNew(menuType)
@@ -36,10 +43,6 @@ class HomepageController: UITableViewController {
         menuViewController.modalPresentationStyle = .overCurrentContext
         menuViewController.transitioningDelegate = self
         present(menuViewController, animated: true)
-
-//        navController.modalPresentationStyle = .overCurrentContext
-//        navController.transitioningDelegate = self
-//        present(navController, animated: true, completion: nil)
 
     }
     

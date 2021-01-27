@@ -441,6 +441,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="VxX-vZ-yXu">
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.9383265972" green="0.77950853109999996" blue="0.60780835150000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <state key="normal" title="Find Recipes">
+                                <color key="titleColor" red="0.98364359140000002" green="0.52540731429999998" blue="0.12833124400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="findRecipepressed:" destination="mBw-Fp-mzC" eventType="touchUpInside" id="UQ4-7R-8PH"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="IngredientCell" id="TKI-OF-YmH">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -472,6 +484,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="findRecipeButton" destination="VxX-vZ-yXu" id="ZSL-nQ-p3W"/>
                         <segue destination="3i9-Id-sAG" kind="show" identifier="ShowFavorites" id="P7S-GS-PKZ"/>
                         <segue destination="2FQ-hh-Gzs" kind="show" identifier="showHistory" id="X4y-Hn-hym"/>
                     </connections>
