@@ -13,8 +13,8 @@ class HomepageController: UITableViewController {
     let transition = SlideInTrasition()
     var topView: UIView?
 
-   
-    let ingredientArray = ["Rice", "Beans", "Salmon", "Fish", "Tomato"]
+    
+    var ingredients = [Ingredients]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
@@ -23,6 +23,8 @@ class HomepageController: UITableViewController {
         lengthOfList(animated: animated)
 
     }
+    
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated);
@@ -35,8 +37,13 @@ class HomepageController: UITableViewController {
 
         title = "Food in my Fridge"
         navigationItem.hidesBackButton = true
-
-        
+    }
+   
+    //Preparing segue to delegate the View Controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let addVC = segue.destination as? AddItemViewController {
+            addVC.delegate = self
+        }
     }
     
 
@@ -60,7 +67,7 @@ class HomepageController: UITableViewController {
     func lengthOfList(animated: Bool){
         self.navigationController?.toolbar.barTintColor = UIColor.orange
         
-        if ingredientArray.count <= 0{
+        if ingredients.count <= 0{
             self.navigationController?.setToolbarHidden(true, animated: animated)
         } else{
             self.navigationController?.setToolbarHidden(false, animated: animated)
@@ -70,6 +77,7 @@ class HomepageController: UITableViewController {
     
     //MARK - Add New Items
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+
     }
     
     func transitionToNew(_ menuType: MenuType){
@@ -96,13 +104,15 @@ class HomepageController: UITableViewController {
     //MARK - Tableview Datasource Methods
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredientArray.count
+        return ingredients.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
         
-        cell.textLabel?.text = ingredientArray[indexPath.row]
+        cell.textLabel?.text = ingredients[indexPath.row].name
+        cell.detailTextLabel?.text = ingredients[indexPath.row].quantity
+        
         
         return cell
     }
@@ -110,7 +120,7 @@ class HomepageController: UITableViewController {
     // MARK - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(ingredientArray[indexPath.row])
+        print(ingredients[indexPath.row])
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -128,6 +138,17 @@ extension HomepageController: UIViewControllerTransitioningDelegate{
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.isPresenting = false
         return transition
+    }
+}
+
+extension HomepageController: AddIngredientDelegate{
+    func addIngredient(ing: Ingredients) {
+        self.dismiss(animated: true) {
+            self.ingredients.append(ing)
+            self.tableView.reloadData()
+            //Displaying Toolbar if array >= 0
+            self.lengthOfList(animated: true)
+        }
     }
 }
 

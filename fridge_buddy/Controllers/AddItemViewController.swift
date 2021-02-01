@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol AddIngredientDelegate {
+    func addIngredient(ing: Ingredients)
+}
+
 class AddItemViewController: UIViewController {
+    
+    var delegate: AddIngredientDelegate?
 
   
     @IBOutlet weak var ingredientsTextfield: UITextField!
     @IBOutlet weak var quantityTextfield: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +30,26 @@ class AddItemViewController: UIViewController {
 
     }
     
+    
     @IBAction func closePressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func addPressed(_ sender: UIButton) {
+        guard let name = ingredientsTextfield.text, ingredientsTextfield.hasText else{
+            print("Handle error here..")
+            return
+        }
+        
+        guard let quantity = quantityTextfield.text, quantityTextfield.hasText else{
+            print("Handle error here..")
+            return
+        }
+        
+        let ingredient = Ingredients(name: name, quantity: quantity)
+        delegate?.addIngredient(ing: ingredient)
+        print(ingredient.name)
+        print(ingredient.quantity)
+        
     }
     
     func textFieldBorder(){

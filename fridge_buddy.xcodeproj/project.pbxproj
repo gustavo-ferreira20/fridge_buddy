@@ -10,6 +10,7 @@
 		0980A4130D60B033B76586DB /* Pods_fridge_buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE79B3F5156B9878E966E466 /* Pods_fridge_buddy.framework */; };
 		5430BBE9C4F83325BB5778AE /* Pods_fridge_buddy_fridge_buddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3F93E4ED520BDD8C1CF7B5 /* Pods_fridge_buddy_fridge_buddyUITests.framework */; };
 		9304EE1125B51F3800426F94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304EE1025B51F3800426F94 /* SignupViewController.swift */; };
+		9318600A25C7E1A500697E56 /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318600925C7E1A500697E56 /* IngredientsModel.swift */; };
 		9330E64D25B66948007588E7 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330E64C25B66948007588E7 /* ForgotPassword.swift */; };
 		9370AFA425B7BCAF00DC7C0B /* HomepageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */; };
 		937E372425C100AB009B4667 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937E372325C100AB009B4667 /* AddItemViewController.swift */; };
@@ -52,6 +53,7 @@
 		74A207D83648BC232F469A2C /* Pods-fridge_buddy-fridge_buddyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridge_buddy-fridge_buddyUITests.release.xcconfig"; path = "Target Support Files/Pods-fridge_buddy-fridge_buddyUITests/Pods-fridge_buddy-fridge_buddyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E5DB036EA97FC3B08CDB4E2 /* Pods-fridge_buddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridge_buddy.debug.xcconfig"; path = "Target Support Files/Pods-fridge_buddy/Pods-fridge_buddy.debug.xcconfig"; sourceTree = "<group>"; };
 		9304EE1025B51F3800426F94 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		9318600925C7E1A500697E56 /* IngredientsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModel.swift; sourceTree = "<group>"; };
 		9330E64C25B66948007588E7 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageController.swift; sourceTree = "<group>"; };
 		937E372325C100AB009B4667 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				938EEF2525B95B6300B6A417 /* SlideInTrasition.swift */,
+				9318600925C7E1A500697E56 /* IngredientsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93EBE31B25B92C82006BF03F /* MenuController.swift in Sources */,
+				9318600A25C7E1A500697E56 /* IngredientsModel.swift in Sources */,
 				93EBE32025B9389B006BF03F /* FavoritesViewController.swift in Sources */,
 				9399033425AD3EC700A96315 /* LoginViewController.swift in Sources */,
 				93EBE32525B93900006BF03F /* HistoryViewController.swift in Sources */,
