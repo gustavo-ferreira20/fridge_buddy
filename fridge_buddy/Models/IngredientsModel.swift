@@ -11,4 +11,5 @@ import Foundation
 struct Ingredients {
     var name: String
     var quantity: String
+    var measure: String
 }

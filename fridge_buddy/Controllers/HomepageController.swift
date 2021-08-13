@@ -111,7 +111,7 @@ class HomepageController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
         
         cell.textLabel?.text = ingredients[indexPath.row].name
-        cell.detailTextLabel?.text = ingredients[indexPath.row].quantity
+        cell.detailTextLabel?.text = ingredients[indexPath.row].quantity + " "  + ingredients[indexPath.row].measure
         
         
         return cell

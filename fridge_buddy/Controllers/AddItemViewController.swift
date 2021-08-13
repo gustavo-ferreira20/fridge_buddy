@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import iOSDropDown
 
 protocol AddIngredientDelegate {
     func addIngredient(ing: Ingredients)
@@ -18,6 +19,7 @@ class AddItemViewController: UIViewController {
   
     @IBOutlet weak var ingredientsTextfield: UITextField!
     @IBOutlet weak var quantityTextfield: UITextField!
+    @IBOutlet weak var measurementMenu: DropDown!
     @IBOutlet weak var addButton: UIButton!
     
     
@@ -27,7 +29,7 @@ class AddItemViewController: UIViewController {
         textFieldBorder()
         
         addButton.layer.cornerRadius = 6
-
+        dropDownDetails()
     }
     
     
@@ -45,10 +47,16 @@ class AddItemViewController: UIViewController {
             return
         }
         
-        let ingredient = Ingredients(name: name, quantity: quantity)
+        guard let measurement = measurementMenu.text, measurementMenu.hasText else{
+            print("Handle error here..")
+            return
+        }
+        
+        let ingredient = Ingredients(name: name, quantity: quantity, measure: measurement)
         delegate?.addIngredient(ing: ingredient)
         print(ingredient.name)
         print(ingredient.quantity)
+        print(measurementMenu.text ?? "none")
         
     }
     
@@ -62,6 +70,11 @@ class AddItemViewController: UIViewController {
         
         ingredientsTextfield.layer.cornerRadius = 4
         quantityTextfield.layer.cornerRadius = 6
+    }
+    
+    func dropDownDetails(){
+        measurementMenu.optionArray = ["Integer Number", "Grams", "Mililiters"]
+        measurementMenu.selectedRowColor = UIColor.orange
     }
 
 
