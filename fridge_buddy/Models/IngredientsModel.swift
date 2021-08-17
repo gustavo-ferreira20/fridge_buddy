@@ -6,10 +6,19 @@
 //
 
 import Foundation
+import RealmSwift
 
 
-struct Ingredients {
-    var name: String
-    var quantity: String
-    var measure: String
+class Ingredients: Object {
+    @Persisted var name: String
+    @Persisted var quantity: String
+    @Persisted var measure: String
+    
+   convenience init(name : String, quantity : String, measure: String) {
+        self.init()
+        
+        self.name = name
+        self.quantity = quantity
+        self.measure = measure
+    }
 }

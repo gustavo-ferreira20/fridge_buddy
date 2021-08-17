@@ -8,6 +8,7 @@
 import UIKit
 import iOSDropDown
 
+
 protocol AddIngredientDelegate {
     func addIngredient(ing: Ingredients)
 }
@@ -15,6 +16,7 @@ protocol AddIngredientDelegate {
 class AddItemViewController: UIViewController {
     
     var delegate: AddIngredientDelegate?
+    
 
   
     @IBOutlet weak var ingredientsTextfield: UITextField!
@@ -54,9 +56,10 @@ class AddItemViewController: UIViewController {
         
         let ingredient = Ingredients(name: name, quantity: quantity, measure: measurement)
         delegate?.addIngredient(ing: ingredient)
+        
         print(ingredient.name)
         print(ingredient.quantity)
-        print(measurementMenu.text ?? "none")
+        print(ingredient.measure)
         
     }
     

@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomepageController: UITableViewController {
+    let realm = try! Realm()
+    
     
     @IBOutlet weak var findRecipeButton: UIButton!
     let transition = SlideInTrasition()
@@ -37,6 +40,7 @@ class HomepageController: UITableViewController {
 
         title = "Food in my Fridge"
         navigationItem.hidesBackButton = true
+        
     }
    
     //Preparing segue to delegate the View Controller
@@ -144,6 +148,10 @@ extension HomepageController: UIViewControllerTransitioningDelegate{
 extension HomepageController: AddIngredientDelegate{
     func addIngredient(ing: Ingredients) {
         self.dismiss(animated: true) {
+            try! self.realm.write{
+                self.realm.add(ing)
+                print(Realm.Configuration.defaultConfiguration.fileURL)
+            }
             self.ingredients.append(ing)
             self.tableView.reloadData()
             //Displaying Toolbar if array >= 0
