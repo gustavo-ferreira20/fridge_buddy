@@ -17,7 +17,8 @@ class HomepageController: UITableViewController {
     var topView: UIView?
 
     
-    var ingredients = [Ingredients]()
+//    var ingredients = [Ingredients]()
+    var ingredients: Results<Ingredients>?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
@@ -40,6 +41,9 @@ class HomepageController: UITableViewController {
 
         title = "Food in my Fridge"
         navigationItem.hidesBackButton = true
+        
+        // updating tableview with ingredients from Realm DB
+        loadIngredients()
         
     }
    
@@ -71,11 +75,19 @@ class HomepageController: UITableViewController {
     func lengthOfList(animated: Bool){
         self.navigationController?.toolbar.barTintColor = UIColor.orange
         
-        if ingredients.count <= 0{
+        if ingredients!.count <= 0{
             self.navigationController?.setToolbarHidden(true, animated: animated)
         } else{
             self.navigationController?.setToolbarHidden(false, animated: animated)
         }
+    }
+    
+    // Loading itens from Realm DB
+    
+    func loadIngredients() {
+        ingredients = realm.objects(Ingredients.self)
+        
+        tableView.reloadData()
     }
     
     
@@ -108,14 +120,16 @@ class HomepageController: UITableViewController {
     //MARK - Tableview Datasource Methods
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredients.count
+        return ingredients?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
         
-        cell.textLabel?.text = ingredients[indexPath.row].name
-        cell.detailTextLabel?.text = ingredients[indexPath.row].quantity + " "  + ingredients[indexPath.row].measure
+        cell.textLabel?.text = ingredients?[indexPath.row].name ?? " No Ingredients added yet"
+        cell.detailTextLabel?.text = ingredients![indexPath.row].quantity  + " "  + ingredients![indexPath.row].measure
+        
+
         
         
         return cell
@@ -124,8 +138,9 @@ class HomepageController: UITableViewController {
     // MARK - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(ingredients[indexPath.row])
-        
+//        Obtain all cell info by clicking here
+        print(ingredients![indexPath.row])
+
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -152,7 +167,7 @@ extension HomepageController: AddIngredientDelegate{
                 self.realm.add(ing)
                 print(Realm.Configuration.defaultConfiguration.fileURL)
             }
-            self.ingredients.append(ing)
+//            self.ingredients.append(ing)
             self.tableView.reloadData()
             //Displaying Toolbar if array >= 0
             self.lengthOfList(animated: true)
