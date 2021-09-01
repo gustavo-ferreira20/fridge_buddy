@@ -8,9 +8,14 @@
 import UIKit
 import RealmSwift
 
+
+
 class HomepageController: UITableViewController {
+
+    
     let realm = try! Realm()
     
+    var myIndex = 0
     
     @IBOutlet weak var findRecipeButton: UIButton!
     let transition = SlideInTrasition()
@@ -19,6 +24,7 @@ class HomepageController: UITableViewController {
     
 //    var ingredients = [Ingredients]()
     var ingredients: Results<Ingredients>?
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
@@ -52,8 +58,16 @@ class HomepageController: UITableViewController {
         if let addVC = segue.destination as? AddItemViewController {
             addVC.delegate = self
         }
+        if(segue.identifier == "editSegue"){
+            let editVC = segue.destination as! EditViewController
+            editVC.ingName = ingredients?[myIndex].name
+            editVC.ingDesc = (ingredients?[myIndex].quantity)! + " " + (ingredients?[myIndex].measure)!
+        }
+        
     }
     
+    
+
 
     @IBAction func findRecipepressed(_ sender: UIButton) {
         //Search for recipe in the API
@@ -140,8 +154,18 @@ class HomepageController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        Obtain all cell info by clicking here
         print(ingredients![indexPath.row])
+        print(ingredients![indexPath.row].name)
 
+        myIndex = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        self.performSegue(withIdentifier: "editSegue", sender: self)
+        
+        
+//        let editIng = Ingredients(name: (ingredients?[indexPath.row].name)!, quantity: (ingredients?[indexPath.row].quantity)!, measure: (ingredients?[indexPath.row].measure)!)
+//        print(editIng)
+
+        
     }
 
 }

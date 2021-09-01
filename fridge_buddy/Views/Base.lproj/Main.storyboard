@@ -512,6 +512,7 @@
                     <connections>
                         <segue destination="3i9-Id-sAG" kind="show" identifier="ShowFavorites" id="P7S-GS-PKZ"/>
                         <segue destination="2FQ-hh-Gzs" kind="show" identifier="showHistory" id="X4y-Hn-hym"/>
+                        <segue destination="UzA-dc-Jf5" kind="show" identifier="editSegue" id="kRm-Ep-tw9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sim-xX-8BO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -705,7 +706,43 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z6-uc-aRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4304" y="115"/>
+            <point key="canvasLocation" x="4338" y="-322"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="Ycq-zH-4ec">
+            <objects>
+                <viewController id="UzA-dc-Jf5" customClass="EditViewController" customModule="fridge_buddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pyf-Se-Zis">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eak-Hl-wYr">
+                                <rect key="frame" x="83" y="266" width="249" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4W-ee-HU2">
+                                <rect key="frame" x="83" y="445" width="249" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fdt-Nj-guw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QF3-Fa-mNg"/>
+                    <connections>
+                        <outlet property="ingredientDescription" destination="T4W-ee-HU2" id="UX6-Tx-26m"/>
+                        <outlet property="ingredientTitle" destination="eak-Hl-wYr" id="Ncd-ID-4fo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jqU-XS-2Sy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5292.753623188406" y="114.50892857142857"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="rxy-RM-PX5">
