@@ -738,6 +738,9 @@
                                 <state key="normal" title="Update">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="updatePressed:" destination="UzA-dc-Jf5" eventType="touchUpInside" id="3WJ-R0-QLg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fdt-Nj-guw"/>

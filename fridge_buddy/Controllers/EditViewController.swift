@@ -38,11 +38,30 @@ class EditViewController: UIViewController {
         
     }
     
- 
     
+    @IBAction func updatePressed(_ sender: Any) {
+        guard let name = ingredientsTextfield.text, ingredientsTextfield.hasText else{
+            print("Handle error here..")
+            return
+        }
+        
+        guard let quantity = quantityTextfield.text, quantityTextfield.hasText else{
+            print("Handle error here..")
+            return
+        }
+        
+        guard let measurement = measurementMenu.text, measurementMenu.hasText else{
+            print("Handle error here..")
+            return
+        }
+        
+        let ingredient = Ingredients(name: name, quantity: quantity, measure: measurement)
+        
+        print(ingredient)
+    }
+
+
 }
-
-
 
 
 
