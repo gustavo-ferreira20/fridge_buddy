@@ -58,10 +58,12 @@ class HomepageController: UITableViewController {
         if let addVC = segue.destination as? AddItemViewController {
             addVC.delegate = self
         }
+        // passing data from homepage controller to editVC
         if(segue.identifier == "editSegue"){
             let editVC = segue.destination as! EditViewController
             editVC.ingName = ingredients?[myIndex].name
-            editVC.ingDesc = (ingredients?[myIndex].quantity)! + " " + (ingredients?[myIndex].measure)!
+            editVC.ingDesc = ingredients?[myIndex].quantity
+            editVC.ingMeas = ingredients?[myIndex].measure
         }
         
     }

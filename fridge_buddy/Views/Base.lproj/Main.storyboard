@@ -716,28 +716,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eak-Hl-wYr">
-                                <rect key="frame" x="83" y="266" width="249" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4W-ee-HU2">
-                                <rect key="frame" x="83" y="445" width="249" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UbB-TY-WCS">
+                                <rect key="frame" x="20" y="145" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmc-v2-mW3">
+                                <rect key="frame" x="20" y="212" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Measurement" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWl-rj-1YV" customClass="DropDown" customModule="iOSDropDown">
+                                <rect key="frame" x="20" y="275" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RZ-Wj-Kca">
+                                <rect key="frame" x="20" y="350" width="374" height="40"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fdt-Nj-guw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1RZ-Wj-Kca" firstAttribute="top" secondItem="nWl-rj-1YV" secondAttribute="bottom" constant="41" id="7Tg-Am-qch"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="top" secondItem="fdt-Nj-guw" secondAttribute="top" constant="57" id="DvE-wv-YnQ"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="trailing" secondItem="nWl-rj-1YV" secondAttribute="trailing" id="ETG-A2-kKa"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="trailing" secondItem="1RZ-Wj-Kca" secondAttribute="trailing" id="SFP-WQ-TrE"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="leading" secondItem="rmc-v2-mW3" secondAttribute="leading" id="V4W-H3-Uvv"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="leading" secondItem="pyf-Se-Zis" secondAttribute="leadingMargin" id="ckg-BA-9OU"/>
+                            <constraint firstItem="rmc-v2-mW3" firstAttribute="top" secondItem="UbB-TY-WCS" secondAttribute="bottom" constant="33" id="dN7-if-g1F"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="leading" secondItem="nWl-rj-1YV" secondAttribute="leading" id="e5L-0G-xvf"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="leading" secondItem="1RZ-Wj-Kca" secondAttribute="leading" id="jkL-bW-CNd"/>
+                            <constraint firstItem="nWl-rj-1YV" firstAttribute="top" secondItem="rmc-v2-mW3" secondAttribute="bottom" constant="29" id="lIR-pK-FZF"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="trailing" secondItem="rmc-v2-mW3" secondAttribute="trailing" id="ruR-Gt-qMY"/>
+                            <constraint firstItem="UbB-TY-WCS" firstAttribute="trailing" secondItem="pyf-Se-Zis" secondAttribute="trailingMargin" id="ty8-Ho-vdI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QF3-Fa-mNg"/>
                     <connections>
-                        <outlet property="ingredientDescription" destination="T4W-ee-HU2" id="UX6-Tx-26m"/>
-                        <outlet property="ingredientTitle" destination="eak-Hl-wYr" id="Ncd-ID-4fo"/>
+                        <outlet property="ingredientsTextfield" destination="UbB-TY-WCS" id="va7-Nq-OfQ"/>
+                        <outlet property="measurementMenu" destination="nWl-rj-1YV" id="T0n-5u-tIw"/>
+                        <outlet property="quantityTextfield" destination="rmc-v2-mW3" id="CVq-w4-h2B"/>
+                        <outlet property="updateButton" destination="1RZ-Wj-Kca" id="gIJ-6N-NZx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqU-XS-2Sy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -870,6 +895,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="493-II-xCj"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Mango" width="480" height="300"/>
         <image name="arrow.turn.up.forward.iphone.fill" catalog="system" width="128" height="94"/>
@@ -885,6 +911,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

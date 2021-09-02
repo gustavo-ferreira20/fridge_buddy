@@ -6,22 +6,39 @@
 //
 
 import UIKit
+import iOSDropDown
 
 class EditViewController: UIViewController {
     
+    @IBOutlet weak var ingredientsTextfield: UITextField!
+    @IBOutlet weak var quantityTextfield: UITextField!
+    @IBOutlet weak var measurementMenu: DropDown!
+    @IBOutlet weak var updateButton: UIButton!
     
-    @IBOutlet weak var ingredientTitle: UILabel!
-    @IBOutlet weak var ingredientDescription: UILabel!
+    
+    
     
     var ingName: String?
     var ingDesc: String?
+    var ingMeas: String?
+    let measures = Measures().measuresOptions
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ingredientTitle.text = ingName
-        ingredientDescription.text = ingDesc
+        ingredientsTextfield.text = ingName
+        quantityTextfield.text = ingDesc
+        measurementMenu.text = ingMeas
+        
+        AddItemViewController().dropDownDetails(menu: measurementMenu, options: measures )
+        AddItemViewController().textFieldBorder(ingredientText: ingredientsTextfield, quantity: quantityTextfield)
+        updateButton.layer.cornerRadius = 6
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
     }
+    
+ 
     
 }
 

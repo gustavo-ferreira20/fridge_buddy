@@ -25,13 +25,16 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     
+    let measures = Measures().measuresOptions
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Adding borders to textfield
-        textFieldBorder()
+        textFieldBorder(ingredientText: ingredientsTextfield, quantity: quantityTextfield)
         
         addButton.layer.cornerRadius = 6
-        dropDownDetails()
+        dropDownDetails(menu: measurementMenu, options: measures)
     }
     
     
@@ -63,21 +66,26 @@ class AddItemViewController: UIViewController {
         
     }
     
-    func textFieldBorder(){
-        let myColor = UIColor.orange
-           ingredientsTextfield.layer.borderColor = myColor.cgColor
-           quantityTextfield.layer.borderColor = myColor.cgColor
 
-           ingredientsTextfield.layer.borderWidth = 1.0
-           quantityTextfield.layer.borderWidth = 1.0
+    func textFieldBorder(ingredientText: UITextField, quantity: UITextField){
+        let myColor = UIColor.orange
+           ingredientText.layer.borderColor = myColor.cgColor
+           quantity.layer.borderColor = myColor.cgColor
+
+           ingredientText.layer.borderWidth = 1.0
+           quantity.layer.borderWidth = 1.0
         
-        ingredientsTextfield.layer.cornerRadius = 4
-        quantityTextfield.layer.cornerRadius = 6
+        ingredientText.layer.cornerRadius = 4
+        quantity.layer.cornerRadius = 6
     }
     
-    func dropDownDetails(){
-        measurementMenu.optionArray = ["Integer Number", "Grams", "Mililiters"]
-        measurementMenu.selectedRowColor = UIColor.orange
+
+    
+    func dropDownDetails(menu: DropDown, options: [String]){
+        menu.optionArray = options
+        menu.selectedRowColor = UIColor.orange
+        menu.borderColor = UIColor.orange
+        menu.cornerRadius = 6
     }
 
 

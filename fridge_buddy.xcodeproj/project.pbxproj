@@ -16,6 +16,7 @@
 		9370AFA425B7BCAF00DC7C0B /* HomepageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */; };
 		937E372425C100AB009B4667 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937E372325C100AB009B4667 /* AddItemViewController.swift */; };
 		938EEF2625B95B6300B6A417 /* SlideInTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938EEF2525B95B6300B6A417 /* SlideInTrasition.swift */; };
+		938FEB8326E072E40056F009 /* MeasurementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FEB8226E072E40056F009 /* MeasurementModel.swift */; };
 		9399033425AD3EC700A96315 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399033325AD3EC700A96315 /* LoginViewController.swift */; };
 		93AA49C726DF1F7600AE4317 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA49C626DF1F7600AE4317 /* EditViewController.swift */; };
 		93EBE31B25B92C82006BF03F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE31A25B92C82006BF03F /* MenuController.swift */; };
@@ -61,6 +62,7 @@
 		9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageController.swift; sourceTree = "<group>"; };
 		937E372325C100AB009B4667 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		938EEF2525B95B6300B6A417 /* SlideInTrasition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTrasition.swift; sourceTree = "<group>"; };
+		938FEB8226E072E40056F009 /* MeasurementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementModel.swift; sourceTree = "<group>"; };
 		9399033325AD3EC700A96315 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93AA49C626DF1F7600AE4317 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		93EBE31A25B92C82006BF03F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				938EEF2525B95B6300B6A417 /* SlideInTrasition.swift */,
 				9318600925C7E1A500697E56 /* IngredientsModel.swift */,
+				938FEB8226E072E40056F009 /* MeasurementModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93EBE31B25B92C82006BF03F /* MenuController.swift in Sources */,
+				938FEB8326E072E40056F009 /* MeasurementModel.swift in Sources */,
 				9318600A25C7E1A500697E56 /* IngredientsModel.swift in Sources */,
 				93EBE32025B9389B006BF03F /* FavoritesViewController.swift in Sources */,
 				9399033425AD3EC700A96315 /* LoginViewController.swift in Sources */,
