@@ -8,6 +8,10 @@
 import UIKit
 import iOSDropDown
 
+protocol UpdatingIngredientDelegate {
+    func updatingIngredient(ing: Ingredients)
+}
+
 class EditViewController: UIViewController {
     
     @IBOutlet weak var ingredientsTextfield: UITextField!
@@ -16,7 +20,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var updateButton: UIButton!
     
     
-    
+    var delegate: UpdatingIngredientDelegate?
     
     var ingName: String?
     var ingDesc: String?
@@ -57,6 +61,10 @@ class EditViewController: UIViewController {
         
         let ingredient = Ingredients(name: name, quantity: quantity, measure: measurement)
         
+        delegate?.updatingIngredient(ing: ingredient)
+        
+        //Dismissing the viewController using segue
+        self.navigationController?.popViewController(animated: true)
         print(ingredient)
     }
 

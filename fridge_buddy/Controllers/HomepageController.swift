@@ -64,7 +64,10 @@ class HomepageController: UITableViewController {
             editVC.ingName = ingredients?[myIndex].name
             editVC.ingDesc = ingredients?[myIndex].quantity
             editVC.ingMeas = ingredients?[myIndex].measure
+            
+            editVC.delegate = self
         }
+       
         
     }
     
@@ -199,5 +202,30 @@ extension HomepageController: AddIngredientDelegate{
             self.lengthOfList(animated: true)
         }
     }
+}
+
+
+extension HomepageController: UpdatingIngredientDelegate{
+    
+    func updatingIngredient(ing: Ingredients) {
+        
+        
+        if let ingredientItem = self.ingredients?[self.myIndex]{
+            do{
+                try self.realm.write{
+                    ingredientItem.name = ing.name
+                    ingredientItem.quantity = ing.quantity
+                    ingredientItem.measure = ing.measure
+                }
+            } catch{
+                print("error on updating....")
+            }
+            self.tableView.reloadData()
+        }
+               
+            
+    }
+
+    
 }
 
