@@ -742,6 +742,17 @@
                                     <action selector="updatePressed:" destination="UzA-dc-Jf5" eventType="touchUpInside" id="3WJ-R0-QLg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ma-Cr-Nzx">
+                                <rect key="frame" x="20" y="423" width="374" height="38"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deletePressed:" destination="UzA-dc-Jf5" eventType="touchUpInside" id="Z5i-Dt-GzM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fdt-Nj-guw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -749,6 +760,8 @@
                             <constraint firstItem="1RZ-Wj-Kca" firstAttribute="top" secondItem="nWl-rj-1YV" secondAttribute="bottom" constant="41" id="7Tg-Am-qch"/>
                             <constraint firstItem="UbB-TY-WCS" firstAttribute="top" secondItem="fdt-Nj-guw" secondAttribute="top" constant="57" id="DvE-wv-YnQ"/>
                             <constraint firstItem="UbB-TY-WCS" firstAttribute="trailing" secondItem="nWl-rj-1YV" secondAttribute="trailing" id="ETG-A2-kKa"/>
+                            <constraint firstItem="3Ma-Cr-Nzx" firstAttribute="leading" secondItem="fdt-Nj-guw" secondAttribute="leading" constant="20" id="IWS-km-zoa"/>
+                            <constraint firstItem="fdt-Nj-guw" firstAttribute="trailing" secondItem="3Ma-Cr-Nzx" secondAttribute="trailing" constant="20" id="SAT-YD-AOk"/>
                             <constraint firstItem="UbB-TY-WCS" firstAttribute="trailing" secondItem="1RZ-Wj-Kca" secondAttribute="trailing" id="SFP-WQ-TrE"/>
                             <constraint firstItem="UbB-TY-WCS" firstAttribute="leading" secondItem="rmc-v2-mW3" secondAttribute="leading" id="V4W-H3-Uvv"/>
                             <constraint firstItem="UbB-TY-WCS" firstAttribute="leading" secondItem="pyf-Se-Zis" secondAttribute="leadingMargin" id="ckg-BA-9OU"/>
@@ -758,10 +771,12 @@
                             <constraint firstItem="nWl-rj-1YV" firstAttribute="top" secondItem="rmc-v2-mW3" secondAttribute="bottom" constant="29" id="lIR-pK-FZF"/>
                             <constraint firstItem="UbB-TY-WCS" firstAttribute="trailing" secondItem="rmc-v2-mW3" secondAttribute="trailing" id="ruR-Gt-qMY"/>
                             <constraint firstItem="UbB-TY-WCS" firstAttribute="trailing" secondItem="pyf-Se-Zis" secondAttribute="trailingMargin" id="ty8-Ho-vdI"/>
+                            <constraint firstItem="3Ma-Cr-Nzx" firstAttribute="top" secondItem="1RZ-Wj-Kca" secondAttribute="bottom" constant="33" id="xik-Ss-4Gc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QF3-Fa-mNg"/>
                     <connections>
+                        <outlet property="deleteButton" destination="3Ma-Cr-Nzx" id="WH4-CK-GXN"/>
                         <outlet property="ingredientsTextfield" destination="UbB-TY-WCS" id="va7-Nq-OfQ"/>
                         <outlet property="measurementMenu" destination="nWl-rj-1YV" id="T0n-5u-tIw"/>
                         <outlet property="quantityTextfield" destination="rmc-v2-mW3" id="CVq-w4-h2B"/>
@@ -914,6 +929,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

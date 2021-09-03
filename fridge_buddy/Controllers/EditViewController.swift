@@ -10,6 +10,7 @@ import iOSDropDown
 
 protocol UpdatingIngredientDelegate {
     func updatingIngredient(ing: Ingredients)
+    func deletingIngredient()
 }
 
 class EditViewController: UIViewController {
@@ -18,6 +19,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var quantityTextfield: UITextField!
     @IBOutlet weak var measurementMenu: DropDown!
     @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     
     var delegate: UpdatingIngredientDelegate?
@@ -38,6 +40,7 @@ class EditViewController: UIViewController {
         AddItemViewController().dropDownDetails(menu: measurementMenu, options: measures )
         AddItemViewController().textFieldBorder(ingredientText: ingredientsTextfield, quantity: quantityTextfield)
         updateButton.layer.cornerRadius = 6
+        deleteButton.layer.cornerRadius = 6
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
     }
@@ -68,7 +71,11 @@ class EditViewController: UIViewController {
         print(ingredient)
     }
 
-
+    @IBAction func deletePressed(_ sender: Any) {
+        delegate?.deletingIngredient()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 

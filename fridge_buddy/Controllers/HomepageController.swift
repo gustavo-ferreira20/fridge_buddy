@@ -7,7 +7,7 @@
 
 import UIKit
 import RealmSwift
-
+import NotificationBannerSwift
 
 
 class HomepageController: UITableViewController {
@@ -206,13 +206,34 @@ extension HomepageController: AddIngredientDelegate{
 
 
 extension HomepageController: UpdatingIngredientDelegate{
+  // DELETING INGREDIENT
+    func deletingIngredient() {
+        if let ingredientItem = self.ingredients?[self.myIndex]{
+            do{
+                try self.realm.write{
+//                    to delete an item
+                    realm.delete(ingredientItem)
+                }
+            } catch{
+                print("error on updating....")
+            }
+//            Showing a banner notification
+            let banner = StatusBarNotificationBanner(title: "The ingredient is not in your Fridge anymore!", style: .success, colors: nil)
+            banner.show()
+//            Uploading tableview
+            self.tableView.reloadData()
+        }
+    }
     
+//   UPDATING INGREDIENT
     func updatingIngredient(ing: Ingredients) {
         
         
         if let ingredientItem = self.ingredients?[self.myIndex]{
             do{
                 try self.realm.write{
+//                    to delete an item
+//                    realm.delete(ingredientItem)
                     ingredientItem.name = ing.name
                     ingredientItem.quantity = ing.quantity
                     ingredientItem.measure = ing.measure
