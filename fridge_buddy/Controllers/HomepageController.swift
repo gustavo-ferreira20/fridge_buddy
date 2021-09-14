@@ -12,6 +12,7 @@ import NotificationBannerSwift
 
 class HomepageController: UITableViewController {
 
+    var ingredientsApiString = ""
     
     let realm = try! Realm()
     
@@ -73,10 +74,12 @@ class HomepageController: UITableViewController {
     
     
 
-
-    @IBAction func findRecipepressed(_ sender: UIButton) {
-        //Search for recipe in the API
+    @IBAction func didPressFindRecipe(_ sender: Any) {
+        // Search for recipe in the API here
+        joinIngStrings()
     }
+    
+  
     
     @IBAction func didTapMenuButton(_ sender: UIBarButtonItem) {
         guard let menuViewController = storyboard?.instantiateViewController(identifier: "MenuViewController") as? MenuController else{return}
@@ -107,6 +110,21 @@ class HomepageController: UITableViewController {
         ingredients = realm.objects(Ingredients.self)
         
         tableView.reloadData()
+    }
+    
+    // Retriving all ingredients from Realm DB and joining String
+    func joinIngStrings(){
+        var arrayIngredientStrings = [String]()
+//        Looping in the Results Array to get all ingredients names
+        for n in 0..<(ingredients?.count ?? -1-1){
+
+            let ingName = ingredients![n].name
+            arrayIngredientStrings.append(ingName)
+            
+        }
+//        print(arrayIngredientStrings)
+        ingredientsApiString = arrayIngredientStrings.joined(separator: ",+").lowercased()
+        print(ingredientsApiString)
     }
     
     

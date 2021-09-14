@@ -490,6 +490,9 @@
                         <barButtonItem systemItem="flexibleSpace" id="HXn-7I-bJ8"/>
                         <barButtonItem title="Find Recipes" style="done" id="viw-Bb-eo4">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didPressFindRecipe:" destination="mBw-Fp-mzC" id="oP8-wg-xVV"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem systemItem="flexibleSpace" id="u5v-aR-S6N"/>
                     </toolbarItems>
