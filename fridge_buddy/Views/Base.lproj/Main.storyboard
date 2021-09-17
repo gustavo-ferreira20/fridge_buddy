@@ -324,6 +324,35 @@
             </objects>
             <point key="canvasLocation" x="3372.4637681159425" y="904.01785714285711"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Mwg-kO-V2Y">
+            <objects>
+                <tableViewController id="kxb-yB-vQV" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="deX-kE-fRc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0KF-SP-yIV">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0KF-SP-yIV" id="sXh-hP-c2d">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kxb-yB-vQV" id="W8p-us-swE"/>
+                            <outlet property="delegate" destination="kxb-yB-vQV" id="wsD-iZ-HJE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="61N-3q-lsx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEs-RZ-Yzd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4307" y="879"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oii-gw-82t">
             <objects>
@@ -492,6 +521,7 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didPressFindRecipe:" destination="mBw-Fp-mzC" id="oP8-wg-xVV"/>
+                                <segue destination="kxb-yB-vQV" kind="show" identifier="showRecipesList" id="gNS-RK-NVL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem systemItem="flexibleSpace" id="u5v-aR-S6N"/>

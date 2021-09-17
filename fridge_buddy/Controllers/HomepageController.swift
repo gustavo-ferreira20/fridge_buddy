@@ -19,12 +19,7 @@ class HomepageController: UITableViewController {
     
     var myIndex = 0
     
-    //    API variables
-        
-        var apiFinalString = ""
-        let apiKey = "9d96afec84a54537a834cbbcf234f9b2"
-        
-    //    End API
+
     var recipeAPImanager = RecipeAPIManager()
     
     @IBOutlet weak var findRecipeButton: UIButton!
@@ -77,15 +72,18 @@ class HomepageController: UITableViewController {
             
             editVC.delegate = self
         }
+        if(segue.identifier == "showRecipesList"){
+            // Search for recipe in the API here
+            joinIngStrings()
+        }
        
-        
     }
     
     
 
     @IBAction func didPressFindRecipe(_ sender: Any) {
         // Search for recipe in the API here
-        joinIngStrings()
+//        joinIngStrings()
     }
     
   
@@ -134,10 +132,7 @@ class HomepageController: UITableViewController {
 
         ingredientsApiString = arrayIngredientStrings.joined(separator: ",+").lowercased()
         print(ingredientsApiString)
-//        API query
-//        apiFinalString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredientsApiString)&number=10&apiKey=\(apiKey)&ranking=2"
-//        print(apiFinalString)
-        recipeAPImanager.fetchRecipes(ingredientsName: ingredientsApiString)
+       recipeAPImanager.fetchRecipes(ingredientsName: ingredientsApiString)
 //        I'm interested in the ID, Title and Image
     }
     
