@@ -103,6 +103,18 @@ class HomepageController: UITableViewController {
     // Checking how many ingredients in the list
     func lengthOfList(animated: Bool){
         self.navigationController?.toolbar.barTintColor = UIColor.orange
+//        self.navigationController?.toolbar.backgroundColor = UIColor.orange
+        
+        
+        //Fix Toolbar Bartint color issue in iOS 15.0 or later - is transparent w/o code below
+        if #available(iOS 15, *) {
+            let appearance = UIToolbarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.orange
+
+            self.navigationController?.toolbar.standardAppearance = appearance
+            self.navigationController?.toolbar.scrollEdgeAppearance = navigationController?.toolbar.standardAppearance
+        }
         
         if ingredients!.count <= 0{
             self.navigationController?.setToolbarHidden(true, animated: animated)
@@ -221,7 +233,7 @@ extension HomepageController: AddIngredientDelegate{
         self.dismiss(animated: true) {
             try! self.realm.write{
                 self.realm.add(ing)
-                print(Realm.Configuration.defaultConfiguration.fileURL)
+//                print(Realm.Configuration.defaultConfiguration.fileURL)
             }
 //            self.ingredients.append(ing)
             self.tableView.reloadData()
