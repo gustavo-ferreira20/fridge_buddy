@@ -325,10 +325,10 @@
             </objects>
             <point key="canvasLocation" x="3372.4637681159425" y="904.01785714285711"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Recipes View Controller-->
         <scene sceneID="Mwg-kO-V2Y">
             <objects>
-                <tableViewController id="kxb-yB-vQV" sceneMemberID="viewController">
+                <tableViewController id="kxb-yB-vQV" customClass="RecipesViewController" customModule="fridge_buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="deX-kE-fRc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

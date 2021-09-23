@@ -20,6 +20,8 @@
 		938FEB8326E072E40056F009 /* MeasurementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938FEB8226E072E40056F009 /* MeasurementModel.swift */; };
 		9399033425AD3EC700A96315 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9399033325AD3EC700A96315 /* LoginViewController.swift */; };
 		93AA49C726DF1F7600AE4317 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AA49C626DF1F7600AE4317 /* EditViewController.swift */; };
+		93C9811126FC219600BE67F1 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C9811026FC219600BE67F1 /* RecipeData.swift */; };
+		93C9811326FC3D1100BE67F1 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C9811226FC3D1100BE67F1 /* RecipesViewController.swift */; };
 		93EBE31B25B92C82006BF03F /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE31A25B92C82006BF03F /* MenuController.swift */; };
 		93EBE32025B9389B006BF03F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE31F25B9389B006BF03F /* FavoritesViewController.swift */; };
 		93EBE32525B93900006BF03F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE32425B93900006BF03F /* HistoryViewController.swift */; };
@@ -67,6 +69,8 @@
 		938FEB8226E072E40056F009 /* MeasurementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementModel.swift; sourceTree = "<group>"; };
 		9399033325AD3EC700A96315 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93AA49C626DF1F7600AE4317 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		93C9811026FC219600BE67F1 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
+		93C9811226FC3D1100BE67F1 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		93EBE31A25B92C82006BF03F /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		93EBE31F25B9389B006BF03F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		93EBE32425B93900006BF03F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				93EBE32425B93900006BF03F /* HistoryViewController.swift */,
 				937E372325C100AB009B4667 /* AddItemViewController.swift */,
 				93AA49C626DF1F7600AE4317 /* EditViewController.swift */,
+				93C9811226FC3D1100BE67F1 /* RecipesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				9318600925C7E1A500697E56 /* IngredientsModel.swift */,
 				938FEB8226E072E40056F009 /* MeasurementModel.swift */,
 				931FFD7F26F1A4BC00A9F870 /* RecipeAPIManager.swift */,
+				93C9811026FC219600BE67F1 /* RecipeData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -483,9 +489,11 @@
 				93AA49C726DF1F7600AE4317 /* EditViewController.swift in Sources */,
 				937E372425C100AB009B4667 /* AddItemViewController.swift in Sources */,
 				9304EE1125B51F3800426F94 /* SignupViewController.swift in Sources */,
+				93C9811326FC3D1100BE67F1 /* RecipesViewController.swift in Sources */,
 				93F6C03B25ABF0B4009CBEA6 /* AppDelegate.swift in Sources */,
 				9370AFA425B7BCAF00DC7C0B /* HomepageController.swift in Sources */,
 				93F6C03D25ABF0B4009CBEA6 /* SceneDelegate.swift in Sources */,
+				93C9811126FC219600BE67F1 /* RecipeData.swift in Sources */,
 				938EEF2625B95B6300B6A417 /* SlideInTrasition.swift in Sources */,
 				931FFD8026F1A4BC00A9F870 /* RecipeAPIManager.swift in Sources */,
 				9330E64D25B66948007588E7 /* ForgotPassword.swift in Sources */,

@@ -137,7 +137,7 @@ class HomepageController: UITableViewController {
 //        Looping in the Results Array to get all ingredients names
         for n in 0..<(ingredients?.count ?? -1-1){
 
-            let ingName = ingredients![n].name
+            let ingName = ingredients![n].name.replacingOccurrences(of: " ", with: "-")
             arrayIngredientStrings.append(ingName)
             
         }

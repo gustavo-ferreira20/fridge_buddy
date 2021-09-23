@@ -14,11 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        do{
-            let realm = try Realm()
-        }catch{
-            print("Error initialising new Realm, \(error)")
-        }
+//        do{
+//            let realm = try Realm()
+//        }catch{
+//            print("Error initialising new Realm, \(error)")
+//        }
         
         
         return true
