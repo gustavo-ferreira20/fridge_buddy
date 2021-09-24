@@ -7,15 +7,21 @@
 
 import Foundation
 
-struct RecipeAPIManager {
+protocol RecipeManagerDelegate{
+    func didUpdateRecipe(recipe: [RecipeModel])
+}
+
+class RecipeAPIManager {
     let recipeURL = "https://api.spoonacular.com/recipes/findByIngredients?number=10&ranking=2"
     let apiKey = "9d96afec84a54537a834cbbcf234f9b2"
+    
+    var delegate: RecipeManagerDelegate?
     
     
     func fetchRecipes(ingredientsName: String){
         let urlString = "\(recipeURL)&ingredients=\(ingredientsName)&apiKey=\(apiKey)"
         performRequest(urlString: urlString)
-                print(urlString)
+        print(urlString)
         
     }
     
@@ -39,9 +45,18 @@ struct RecipeAPIManager {
                 if let safeData = data{
                     // Converting DATA to a STRING
                     // dataString is all data fetched from the api web server
-//                    let dataString = String(data: safeData, encoding: .utf8)
-//                    print(dataString!)
-                    parseJson(recipeData: safeData)
+                    //                    let dataString = String(data: safeData, encoding: .utf8)
+                    //                    print(dataString!)
+                    if let eachRecipe = self.parseJson(recipeData: safeData){
+                        self.delegate?.didUpdateRecipe(recipe: eachRecipe)
+                        DispatchQueue.main.async {
+                               //do UIWork here
+                            let recipeVC = RecipesViewController()
+                            recipeVC.updateRecipe(recipe: eachRecipe)
+                        }
+                       
+                    }
+                    
                 }
             }
             
@@ -51,33 +66,40 @@ struct RecipeAPIManager {
         
     }
     
-    func parseJson(recipeData: Data){
+    func parseJson(recipeData: Data) -> [RecipeModel]? {
         let decoder = JSONDecoder()
+        var recipe: [RecipeModel]? = []
+        
         do{
-           let decodedData = try decoder.decode([RecipeData].self, from: recipeData )
-
-            fetchingDataApi(decodedData: decodedData)
-
+            let decodedData = try decoder.decode([RecipeData].self, from: recipeData )
+            
+            //            decodedData.forEach { title in print(title)}
+            for i in decodedData{
+                //                        print(i.title + " //ID: " + String(i.id) + " // Missed Ing: " + String(i.missedIngredientCount) )
+                let title = i.title
+                let id = i.id
+                
+                let eachRecipe = RecipeModel(recipeId: id, recipeTitle: title)
+                recipe?.append(eachRecipe)
+//                print("\(): \(recipe!.recipeTitle)")
+                //                        for n in i.usedIngredients{
+                //                            print("Used Ing Name: " + n.name + " //Used Ing Unit: " + n.unit + " //Used Ing Amount: " + String(n.amount))
+                //
+                //                        }
+                //                        print("==========")
+            }
+            return recipe
+            
+            //            DecoddeData is the array to have all cell in the table view
         } catch{
             print("Error in the decoder")
             print(error)
+            return nil
         }
     }
     
-//    Using the Struct RecipeData to fetch all needed field from API
-    func fetchingDataApi(decodedData: [RecipeData]) {
-        //            decodedData.forEach { title in print(title)}
-                    for i in decodedData{
-                        print(i.title + " //ID: " + String(i.id) + " // Missed Ing: " + String(i.missedIngredientCount) )
-                        for n in i.usedIngredients{
-        //                    print("Used Ing Name: " + n.name + " //Used Ing Unit: " + i.usedIngredients[0].unit + " //Used Ing Amount: " + String(i.usedIngredients[0].amount))
-                            print("Used Ing Name: " + n.name + " //Used Ing Unit: " + n.unit + " //Used Ing Amount: " + String(n.amount))
-                            
-                        }
-                        print("==========")
-                        
-                    }
-        
-    }
 
+    
+    
+    
 }

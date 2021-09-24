@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct RecipeData: Decodable {
+struct RecipeData: Codable {
     let title: String
     let id: Int
     let missedIngredientCount: Int
     let usedIngredients: [UsedIngredients]
 }
 
-struct UsedIngredients: Decodable{
+struct UsedIngredients: Codable{
     let unit: String
     let amount: Double
     let name: String

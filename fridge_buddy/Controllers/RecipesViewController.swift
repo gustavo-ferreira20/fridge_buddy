@@ -8,19 +8,23 @@
 import UIKit
 
 class RecipesViewController: UITableViewController {
+    
+    var recipeApiManager = RecipeAPIManager()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        recipeApiManager.delegate = self
         // Do any additional setup after loading the view.
     }
     
 
 
-    //MARK - Tableview Datasource Methods
+//    MARK - Tableview Datasource Methods
 
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-////        return ingredients?.count ?? 1
+//        return 
 //    }
 //
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,5 +53,16 @@ class RecipesViewController: UITableViewController {
 //
 //
 //    }
+    
+    func updateRecipe(recipe: [RecipeModel]){
+        print(recipe[0].recipeTitle)
+    }
+}
 
+extension RecipesViewController: RecipeManagerDelegate{
+    func didUpdateRecipe(recipe: [RecipeModel]) {
+//        print(recipe[0].recipeTitle)
+    }
+    
+    
 }

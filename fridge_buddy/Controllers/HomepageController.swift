@@ -75,6 +75,7 @@ class HomepageController: UITableViewController {
         if(segue.identifier == "showRecipesList"){
             // Search for recipe in the API here
             joinIngStrings()
+
         }
        
     }
