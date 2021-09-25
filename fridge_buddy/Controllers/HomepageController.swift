@@ -19,8 +19,12 @@ class HomepageController: UITableViewController {
     
     var myIndex = 0
     
+    var recipesArray = [RecipeModel]()
 
+    
     var recipeAPImanager = RecipeAPIManager()
+    
+  
     
     @IBOutlet weak var findRecipeButton: UIButton!
     let transition = SlideInTrasition()
@@ -44,18 +48,17 @@ class HomepageController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated);
         self.navigationController?.setToolbarHidden(true, animated: animated)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         title = "Food in my Fridge"
         navigationItem.hidesBackButton = true
         
         // updating tableview with ingredients from Realm DB
         loadIngredients()
-        
     }
    
     //Preparing segue to delegate the View Controller
@@ -74,8 +77,16 @@ class HomepageController: UITableViewController {
         }
         if(segue.identifier == "showRecipesList"){
             // Search for recipe in the API here
-            joinIngStrings()
+            let recipeVc = segue.destination as! RecipesViewController
+            recipeVc.passString = "Hello"
+//            recipeVc.listCount = 5
+//            recipeVc.recipesList =
+            let test = recipeAPImanager.random()
+            print(test)
+            recipeVc.listCount = recipesArray.count
+            print(recipesArray)
 
+            joinIngStrings()
         }
        
     }
@@ -123,6 +134,7 @@ class HomepageController: UITableViewController {
             self.navigationController?.setToolbarHidden(false, animated: animated)
         }
     }
+
     
     // Loading itens from Realm DB
     
@@ -146,7 +158,6 @@ class HomepageController: UITableViewController {
         ingredientsApiString = arrayIngredientStrings.joined(separator: ",+").lowercased()
         print(ingredientsApiString)
        recipeAPImanager.fetchRecipes(ingredientsName: ingredientsApiString)
-//        I'm interested in the ID, Title and Image
     }
     
     
@@ -289,4 +300,9 @@ extension HomepageController: UpdatingIngredientDelegate{
 
     
 }
+
+    
+  
+    
+
 
