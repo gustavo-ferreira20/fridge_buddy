@@ -17,16 +17,14 @@ class RecipesViewController: UIViewController  {
 
   
     var ingredientsString = ""
-    var cellId = Int()
+    
+    let apiKey = "9d96afec84a54537a834cbbcf234f9b2"
+    var ingredientInfoURL = ""
     
     
     
     @IBOutlet weak var tableview: UITableView!
     
-    override func viewWillDisappear(_ animated: Bool) {
-//        Testing if the cell ID is saved
-        print(cellId)
-    }
     
     
     override func viewDidLoad() {
@@ -40,6 +38,15 @@ class RecipesViewController: UIViewController  {
             DispatchQueue.main.async {
                 self.tableview.reloadData()
             }
+        }
+    }
+    
+    
+    //Preparing segue to delegate the View Controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "singleIngredient"){
+            let singleRec = segue.destination as! SingleIngredientViewController
+            singleRec.singleIngURL = ingredientInfoURL
         }
     }
     
@@ -76,7 +83,12 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        Obtain all cell info by clicking here
 //       Getting each cell ID upon click -- Use this Id to fetch the full Recipe Info by Using URL/ID
-       cellId = recipeApiManager.recipesArray[indexPath.row].id
+       let cellId = recipeApiManager.recipesArray[indexPath.row].id
+//       Full URL to make a request to API
+       ingredientInfoURL = "https://api.spoonacular.com/recipes/\(cellId)/information?apiKey=\(apiKey)&includeNutrition=false"
+       let singleRec = SingleIngredientViewController()
+       singleRec.singleIngURL = ingredientInfoURL
+       self.performSegue(withIdentifier: "singleIngredient", sender: self)
 
     }
     

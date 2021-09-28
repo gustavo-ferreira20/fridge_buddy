@@ -12,6 +12,7 @@
 		9304EE1125B51F3800426F94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9304EE1025B51F3800426F94 /* SignupViewController.swift */; };
 		9318600A25C7E1A500697E56 /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318600925C7E1A500697E56 /* IngredientsModel.swift */; };
 		931FFD8026F1A4BC00A9F870 /* RecipeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931FFD7F26F1A4BC00A9F870 /* RecipeAPIManager.swift */; };
+		932056942702CAC500D7FD0D /* SingleIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932056932702CAC400D7FD0D /* SingleIngredientViewController.swift */; };
 		9330E64D25B66948007588E7 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330E64C25B66948007588E7 /* ForgotPassword.swift */; };
 		93434BD426C6508D00CD2E39 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93434BD326C6508D00CD2E39 /* iOSDropDown.framework */; };
 		9370AFA425B7BCAF00DC7C0B /* HomepageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */; };
@@ -61,6 +62,7 @@
 		9304EE1025B51F3800426F94 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		9318600925C7E1A500697E56 /* IngredientsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModel.swift; sourceTree = "<group>"; };
 		931FFD7F26F1A4BC00A9F870 /* RecipeAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPIManager.swift; sourceTree = "<group>"; };
+		932056932702CAC400D7FD0D /* SingleIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleIngredientViewController.swift; sourceTree = "<group>"; };
 		9330E64C25B66948007588E7 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		93434BD326C6508D00CD2E39 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9370AFA325B7BCAF00DC7C0B /* HomepageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				937E372325C100AB009B4667 /* AddItemViewController.swift */,
 				93AA49C626DF1F7600AE4317 /* EditViewController.swift */,
 				93C9811226FC3D1100BE67F1 /* RecipesViewController.swift */,
+				932056932702CAC400D7FD0D /* SingleIngredientViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				93F6C03F25ABF0B4009CBEA6 /* WelcomeViewController.swift in Sources */,
 				93AA49C726DF1F7600AE4317 /* EditViewController.swift in Sources */,
 				937E372425C100AB009B4667 /* AddItemViewController.swift in Sources */,
+				932056942702CAC500D7FD0D /* SingleIngredientViewController.swift in Sources */,
 				9304EE1125B51F3800426F94 /* SignupViewController.swift in Sources */,
 				93C9811326FC3D1100BE67F1 /* RecipesViewController.swift in Sources */,
 				93F6C03B25ABF0B4009CBEA6 /* AppDelegate.swift in Sources */,

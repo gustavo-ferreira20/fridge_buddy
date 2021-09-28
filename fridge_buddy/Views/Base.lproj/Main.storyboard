@@ -376,11 +376,28 @@
                     <navigationItem key="navigationItem" id="vyp-4e-obq"/>
                     <connections>
                         <outlet property="tableview" destination="pag-Qu-NhF" id="IuH-dr-9T5"/>
+                        <segue destination="V4J-nn-M1p" kind="show" identifier="singleIngredient" id="DBw-op-HXN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxK-eZ-5fN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4338" y="917"/>
+            <point key="canvasLocation" x="4209" y="929"/>
+        </scene>
+        <!--Single Ingredient View Controller-->
+        <scene sceneID="HFL-K8-hj6">
+            <objects>
+                <viewController id="V4J-nn-M1p" customClass="SingleIngredientViewController" customModule="fridge_buddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z4T-S8-RxW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4aE-h6-nOq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xzk-KG-byc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wio-yq-JCV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4974" y="1495"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oii-gw-82t">
