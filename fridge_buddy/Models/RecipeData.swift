@@ -11,8 +11,9 @@ import Foundation
 struct RecipeData: Codable {
     let title: String
     let id: Int
-    let missedIngredientCount: Int
+    let missedIngredientCount: Int?
     let usedIngredients: [UsedIngredients]
+    let likes: Int?
 }
 
 struct UsedIngredients: Codable{
