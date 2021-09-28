@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct RecipeData: Codable {
     let title: String
     let id: Int

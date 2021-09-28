@@ -9,89 +9,50 @@ import UIKit
 
 
 
-class RecipesViewController: UITableViewController {
+class RecipesViewController: UIViewController  {
+    
     
     var recipeApiManager = RecipeAPIManager()
-    var recipesList = [RecipeModel]()
-    var listCount = Int()
-    
-    var numTest = Int()
-    var instance: HomepageController?
-    var passString: String?
+    var recipesList = [RecipeData]()
+
   
+    var ingredientsString = ""
     
-    @IBOutlet weak var labelTest: UILabel!
     
+    
+    @IBOutlet weak var tableview: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableview.delegate = self
+        tableview.dataSource = self
         
-        labelTest?.text = passString
-        print("testing")
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    
-//        MARK - Tableview Datasource Methods
-    
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-            return listCount
+        recipeApiManager.performRequest(urlString: ingredientsString) {
+            DispatchQueue.main.async {
+                self.tableview.reloadData()
+            }
         }
-    //
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "recipeTitles", for: indexPath)
-
-//            cell.textLabel?.text = recipesList[indexPath.row].recipeTitle
-            cell.textLabel?.text = recipesList[indexPath.row].recipeTitle
-
-            return cell
-        }
-    
-    //
-    //    // MARK - TableView Delegate Methods
-    //
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    ////        Obtain all cell info by clicking here
-    ////        print(ingredients![indexPath.row])
-    ////        print(ingredients![indexPath.row].name)
-    ////
-    ////        myIndex = indexPath.row
-    ////        tableView.deselectRow(at: indexPath, animated: true)
-    ////
-    ////        self.performSegue(withIdentifier: "editSegue", sender: self)
-    //
-    //
-    //    }
-    
-    func updateRecipe(recipe: [RecipeModel]){
-        print(recipe)
-
     }
     
-    func testing(word: String){
-        print("Printed from VC: \(word)")
-    }
+    
+
     
    
-    func addingNum(){
-        numTest = 6
-    }
-    
-//    func upadteLabel(recipe: [RecipeModel]){
-//
-//        labelTest.text = recipe[0].recipeTitle
-//    }
-    
-  
-    
 }
 
-extension RecipesViewController: RecipeApiManagerDelegate{
-    func getRecipesArray(recipe: [RecipeModel]) {
-        print(recipe)
+ 
+extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipeApiManager.recipesArray.count
     }
-   
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableview.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = recipeApiManager.recipesArray[indexPath.row].title
+        return cell
+    }
 }
+

@@ -5,6 +5,9 @@
 //  Created by Gustavo rodrigues on 2021/1/20.
 //
 
+
+
+
 import UIKit
 import RealmSwift
 import NotificationBannerSwift
@@ -12,18 +15,20 @@ import NotificationBannerSwift
 
 class HomepageController: UITableViewController {
     
-
+    let recipeURL = "https://api.spoonacular.com/recipes/findByIngredients?number=10&ranking=2"
+    let apiKey = "9d96afec84a54537a834cbbcf234f9b2"
+    
     var ingredientsApiString = ""
     
     let realm = try! Realm()
     
     var myIndex = 0
     
-    var recipesArray = [RecipeModel]()
-
-    
+    var recipesArray = [RecipeData]()
     var recipeAPImanager = RecipeAPIManager()
     
+    
+    var numTest = Int()
   
     
     @IBOutlet weak var findRecipeButton: UIButton!
@@ -78,15 +83,11 @@ class HomepageController: UITableViewController {
         if(segue.identifier == "showRecipesList"){
             // Search for recipe in the API here
             let recipeVc = segue.destination as! RecipesViewController
-            recipeVc.passString = "Hello"
-//            recipeVc.listCount = 5
-//            recipeVc.recipesList =
-            let test = recipeAPImanager.random()
-            print(test)
-            recipeVc.listCount = recipesArray.count
-            print(recipesArray)
-
             joinIngStrings()
+            let urlString = "\(recipeURL)&ingredients=\(ingredientsApiString)&apiKey=\(apiKey)"
+            //Sending String to RecipeVC
+            recipeVc.ingredientsString = urlString
+            print(urlString)
         }
        
     }
@@ -157,7 +158,6 @@ class HomepageController: UITableViewController {
 
         ingredientsApiString = arrayIngredientStrings.joined(separator: ",+").lowercased()
         print(ingredientsApiString)
-       recipeAPImanager.fetchRecipes(ingredientsName: ingredientsApiString)
     }
     
     
@@ -188,7 +188,6 @@ class HomepageController: UITableViewController {
 
     
     //MARK - Tableview Datasource Methods
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients?.count ?? 1
     }
@@ -220,7 +219,6 @@ class HomepageController: UITableViewController {
         
 //        let editIng = Ingredients(name: (ingredients?[indexPath.row].name)!, quantity: (ingredients?[indexPath.row].quantity)!, measure: (ingredients?[indexPath.row].measure)!)
 //        print(editIng)
-
         
     }
 
@@ -300,8 +298,6 @@ extension HomepageController: UpdatingIngredientDelegate{
 
     
 }
-
-    
   
     
 
