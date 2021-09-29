@@ -13,5 +13,4 @@ struct SingleRecipeData: Codable{
     let image: String
     let summary: String
     let instructions: String
-    let gaps: String
 }

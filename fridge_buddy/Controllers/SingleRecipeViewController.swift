@@ -12,7 +12,15 @@ class SingleRecipeViewController: UIViewController {
     
     // URL of the Ingredient clicked in the Cell
     var singleIngURL = ""
-    @IBOutlet weak var testLabel: UILabel!
+    
+    
+    //IBOulets
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var servingsLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UITextView!
+    @IBOutlet weak var instructionLabel: UITextView!
+    @IBOutlet weak var recipeImage: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +32,55 @@ class SingleRecipeViewController: UIViewController {
         print("Single Ingredient URL: \(singleIngURL)")
         // Do any additional setup after loading the view.
     }
-    
+
 
  
     func didUpdateRecipe(){
-        self.testLabel.text = self.recipeApiManager.recipe?.title
+        self.titleLabel.text = self.recipeApiManager.recipe?.title
+        if let stringServing = self.recipeApiManager.recipe?.servings{
+            self.servingsLabel.text = "\(String(describing: stringServing))"
+        }
+        self.summaryLabel.text = self.recipeApiManager.recipe?.summary.html2String
+        self.instructionLabel.text = self.recipeApiManager.recipe?.instructions.html2String
+//        self.instructionLabel.text = "\(String(describing: self.recipeApiManager.recipe?.instructions))" --> can be an option
+//        Displaying the Image
+        guard let url = URL(string: recipeApiManager.recipe?.image ?? "") else {return}
+        do{
+           let data = try Data(contentsOf: url)
+            self.recipeImage.image = UIImage(data: data)
+            recipeImage.contentMode = .scaleAspectFit
+        }catch{
+            print("No Image")
+        }
     }
     
 
+}
+
+
+//Converting HTML format text to String
+
+extension Data {
+    var html2AttributedString: NSAttributedString? {
+        do {
+            return try NSAttributedString(data: self, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            print("error:", error)
+            return  nil
+        }
+    }
+    var html2String: String { html2AttributedString?.string ?? "" }
+    
+
+}
+
+
+
+extension StringProtocol {
+    var html2AttributedString: NSAttributedString? {
+        Data(utf8).html2AttributedString
+    }
+    var html2String: String {
+        html2AttributedString?.string ?? ""
+    }
 }
