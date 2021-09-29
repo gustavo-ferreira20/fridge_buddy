@@ -36,6 +36,7 @@ class RecipesViewController: UIViewController  {
         
         recipeApiManager.performRequest(urlString: ingredientsString) {
             DispatchQueue.main.async {
+//                Update any UI here
                 self.tableview.reloadData()
             }
         }
@@ -45,7 +46,7 @@ class RecipesViewController: UIViewController  {
     //Preparing segue to delegate the View Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "singleIngredient"){
-            let singleRec = segue.destination as! SingleIngredientViewController
+            let singleRec = segue.destination as! SingleRecipeViewController
             singleRec.singleIngURL = ingredientInfoURL
         }
     }
@@ -86,7 +87,7 @@ extension RecipesViewController: UITableViewDelegate, UITableViewDataSource{
        let cellId = recipeApiManager.recipesArray[indexPath.row].id
 //       Full URL to make a request to API
        ingredientInfoURL = "https://api.spoonacular.com/recipes/\(cellId)/information?apiKey=\(apiKey)&includeNutrition=false"
-       let singleRec = SingleIngredientViewController()
+       let singleRec = SingleRecipeViewController()
        singleRec.singleIngURL = ingredientInfoURL
        self.performSegue(withIdentifier: "singleIngredient", sender: self)
 

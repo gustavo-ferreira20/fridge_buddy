@@ -383,17 +383,29 @@
             </objects>
             <point key="canvasLocation" x="4209" y="929"/>
         </scene>
-        <!--Single Ingredient View Controller-->
+        <!--Single Recipe View Controller-->
         <scene sceneID="HFL-K8-hj6">
             <objects>
-                <viewController id="V4J-nn-M1p" customClass="SingleIngredientViewController" customModule="fridge_buddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V4J-nn-M1p" customClass="SingleRecipeViewController" customModule="fridge_buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z4T-S8-RxW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTM-6I-xUA">
+                                <rect key="frame" x="186" y="237" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4aE-h6-nOq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xzk-KG-byc"/>
+                    <connections>
+                        <outlet property="testLabel" destination="aTM-6I-xUA" id="VOf-e9-aNG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wio-yq-JCV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
