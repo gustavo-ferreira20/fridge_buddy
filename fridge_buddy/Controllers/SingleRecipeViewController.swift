@@ -17,8 +17,12 @@ class SingleRecipeViewController: UIViewController {
     //IBOulets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var servingsLabel: UILabel!
-    @IBOutlet weak var summaryLabel: UITextView!
-    @IBOutlet weak var instructionLabel: UITextView!
+//    @IBOutlet weak var summaryLabel: UITextView!
+//    @IBOutlet weak var instructionLabel: UITextView!
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var instructionLabel: UILabel!
+    
+//    @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
     
     
@@ -40,6 +44,8 @@ class SingleRecipeViewController: UIViewController {
         if let stringServing = self.recipeApiManager.recipe?.servings{
             self.servingsLabel.text = "\(String(describing: stringServing))"
         }
+        
+//        Dispalying HTML data in Strings
         self.summaryLabel.text = self.recipeApiManager.recipe?.summary.html2String
         self.instructionLabel.text = self.recipeApiManager.recipe?.instructions.html2String
 //        self.instructionLabel.text = "\(String(describing: self.recipeApiManager.recipe?.instructions))" --> can be an option
