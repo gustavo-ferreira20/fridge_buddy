@@ -17,17 +17,16 @@ class SingleRecipeViewController: UIViewController {
     //IBOulets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var servingsLabel: UILabel!
-//    @IBOutlet weak var summaryLabel: UITextView!
-//    @IBOutlet weak var instructionLabel: UITextView!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var instructionLabel: UILabel!
-    
-//    @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
-    
+    @IBOutlet weak var viewOfImage: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setLayoutDetails()
+                
         recipeApiManager.performRequestForSingleRecipe(urlString: singleIngURL){
             DispatchQueue.main.async {
                 self.didUpdateRecipe()
@@ -60,6 +59,25 @@ class SingleRecipeViewController: UIViewController {
         }
     }
     
+    func setLayoutDetails(){
+        viewOfImage.layer.cornerRadius = 10
+        viewOfImage.layer.borderWidth = 2
+        
+        recipeImage.layer.cornerRadius = 8
+        
+        summaryLabel.layer.cornerRadius = 10
+        summaryLabel.layer.masksToBounds = true
+        
+        
+        instructionLabel.layer.cornerRadius = 10
+        
+        
+//        recipeImage.layer.borderWidth = 2
+//        recipeImage.layer.borderColor = UIColor(hexString: "#FCD358")
+//        recipeImage.layer.borderColor = UIColor.orange.cgColor
+
+    }
+    
 
 }
 
@@ -90,3 +108,5 @@ extension StringProtocol {
         html2AttributedString?.string ?? ""
     }
 }
+
+
