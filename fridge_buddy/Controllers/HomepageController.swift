@@ -15,8 +15,9 @@ import NotificationBannerSwift
 
 class HomepageController: UITableViewController {
     
+    
     let recipeURL = "https://api.spoonacular.com/recipes/findByIngredients?number=10&ranking=2"
-    let apiKey = "9d96afec84a54537a834cbbcf234f9b2"
+    let apiKey = SecretKeys().apiFoodKey
     
     var ingredientsApiString = ""
     

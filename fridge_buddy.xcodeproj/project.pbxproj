@@ -28,6 +28,7 @@
 		93EBE32025B9389B006BF03F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE31F25B9389B006BF03F /* FavoritesViewController.swift */; };
 		93EBE32525B93900006BF03F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EBE32425B93900006BF03F /* HistoryViewController.swift */; };
 		93EFD1E72761A064003EF4C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93EFD1E62761A064003EF4C2 /* GoogleService-Info.plist */; };
+		93EFD1E92761C574003EF4C2 /* KeysAndNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EFD1E82761C574003EF4C2 /* KeysAndNumbers.swift */; };
 		93F6C03B25ABF0B4009CBEA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6C03A25ABF0B4009CBEA6 /* AppDelegate.swift */; };
 		93F6C03D25ABF0B4009CBEA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6C03C25ABF0B4009CBEA6 /* SceneDelegate.swift */; };
 		93F6C03F25ABF0B4009CBEA6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6C03E25ABF0B4009CBEA6 /* WelcomeViewController.swift */; };
@@ -80,6 +81,7 @@
 		93EBE31F25B9389B006BF03F /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		93EBE32425B93900006BF03F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		93EFD1E62761A064003EF4C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93EFD1E82761C574003EF4C2 /* KeysAndNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysAndNumbers.swift; sourceTree = "<group>"; };
 		93F6C03725ABF0B4009CBEA6 /* fridge_buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fridge_buddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F6C03A25ABF0B4009CBEA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F6C03C25ABF0B4009CBEA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				93AA49C626DF1F7600AE4317 /* EditViewController.swift */,
 				93C9811226FC3D1100BE67F1 /* RecipesViewController.swift */,
 				932056932702CAC400D7FD0D /* SingleRecipeViewController.swift */,
+				93EFD1E82761C574003EF4C2 /* KeysAndNumbers.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93EFD1E92761C574003EF4C2 /* KeysAndNumbers.swift in Sources */,
 				93EBE31B25B92C82006BF03F /* MenuController.swift in Sources */,
 				938FEB8326E072E40056F009 /* MeasurementModel.swift in Sources */,
 				9318600A25C7E1A500697E56 /* IngredientsModel.swift in Sources */,

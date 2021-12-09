@@ -18,7 +18,7 @@ class RecipesViewController: UIViewController  {
   
     var ingredientsString = ""
     
-    let apiKey = "9d96afec84a54537a834cbbcf234f9b2"
+    let apiKey = SecretKeys().apiFoodKey
     var ingredientInfoURL = ""
     
     

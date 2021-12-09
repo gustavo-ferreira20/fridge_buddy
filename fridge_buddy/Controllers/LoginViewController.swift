@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import NotificationBannerSwift
 
 class LoginViewController: UIViewController {
     
@@ -38,6 +39,9 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let e = error{
 //                I can display the error to the user - popup, warning...
+                //            Showing a banner notification
+                let banner = StatusBarNotificationBanner(title: "Incorrect! Enter the correct Email and/or Password.", style: .warning, colors: nil)
+                    banner.show()
                 print(e)
             } else{
                 self.performSegue(withIdentifier: "LoginToHomepage", sender: self)
