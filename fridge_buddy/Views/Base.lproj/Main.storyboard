@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nTU-pU-hoe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nTU-pU-hoe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -157,7 +157,6 @@
                                         </state>
                                         <connections>
                                             <action selector="loginPressed:" destination="BDj-B6-Xju" eventType="touchUpInside" id="mmu-Se-bqH"/>
-                                            <segue destination="mBw-Fp-mzC" kind="show" id="493-II-xCj"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1z5-G0-qg7" userLabel="Password TextField">
@@ -212,6 +211,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="caH-l3-VLe" id="E4I-7E-wFA"/>
                         <outlet property="passwordTextField" destination="1z5-G0-qg7" id="FCL-lS-4vo"/>
+                        <segue destination="mBw-Fp-mzC" kind="show" identifier="LoginToHomepage" id="fJo-ga-cfv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ysg-M6-3Ir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -591,7 +591,6 @@
                                         </state>
                                         <connections>
                                             <action selector="singUpPressed:" destination="L2p-TO-jLU" eventType="touchUpInside" id="MNz-5b-aKd"/>
-                                            <segue destination="mBw-Fp-mzC" kind="show" id="iv9-7g-du2"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgG-jw-T3B" userLabel="Password TextField">
@@ -636,6 +635,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="wyu-0z-Xwd" id="L4O-My-5vi"/>
+                        <outlet property="emailTxtField" destination="wyu-0z-Xwd" id="Zl6-fE-vPu"/>
+                        <outlet property="passwordTxtField" destination="wgG-jw-T3B" id="QzC-J2-ChG"/>
+                        <segue destination="mBw-Fp-mzC" kind="show" identifier="SignUpToHomePage" id="Kep-06-ty7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1a-ie-5zH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1109,7 +1111,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="493-II-xCj"/>
+        <segue reference="fJo-ga-cfv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

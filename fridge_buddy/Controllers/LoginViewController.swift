@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -31,6 +32,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
+        
+        if let email = emailTextField.text, let password = passwordTextField.text{
+        
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let e = error{
+//                I can display the error to the user - popup, warning...
+                print(e)
+            } else{
+                self.performSegue(withIdentifier: "LoginToHomepage", sender: self)
+            }
+          
+        }
+     }
     }
     
     @IBAction func forgotPasswordPressed(_ sender: UIButton) {

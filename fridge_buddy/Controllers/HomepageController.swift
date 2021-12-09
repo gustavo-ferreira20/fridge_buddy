@@ -176,7 +176,7 @@ class HomepageController: UITableViewController {
            // print("history")
             performSegue(withIdentifier: "showHistory", sender: nil)
         case .logOut:
-            // do something to logout
+            // do something to logout //////////////
             print("logging out...")
         default:
             break
