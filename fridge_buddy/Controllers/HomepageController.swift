@@ -11,6 +11,7 @@
 import UIKit
 import RealmSwift
 import NotificationBannerSwift
+import Firebase
 
 
 class HomepageController: UITableViewController {
@@ -90,6 +91,11 @@ class HomepageController: UITableViewController {
             recipeVc.ingredientsString = urlString
             print(urlString)
         }
+//        // Removing Back button after logout is done
+//        if(segue.identifier == "LogOutPressed"){
+//            let logIn = segue.destination as! LoginViewController
+//            logIn.navigationItem.hidesBackButton = true
+//        }
        
     }
     
@@ -179,6 +185,14 @@ class HomepageController: UITableViewController {
         case .logOut:
             // do something to logout //////////////
             print("logging out...")
+            
+            let firebaseAuth = Auth.auth()
+            do{
+                try firebaseAuth.signOut()
+                navigationController?.popToRootViewController(animated: true)
+            } catch let signOutError as NSError{
+                print ("Error signing out: %@", signOutError)
+            }
         default:
             break
         }

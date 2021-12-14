@@ -77,6 +77,14 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+      if segue.identifier == "LogOutPressed"{
+        let objVC = segue.destination as? HomepageController
+        objVC?.navigationItem.hidesBackButton = true
+      }
+    }
+    
 }
 
 //extension UINavigationController{
